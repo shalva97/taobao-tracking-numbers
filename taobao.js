@@ -45,17 +45,31 @@ function trackingNumRow() {
     return row
 }
 
-var listOfOrders = document.getElementsByClassName('index-mod__order-container___1ur4-')
-for (var order of listOfOrders) {
-    var row = trackingNumRow()
-    var orderId = order.getElementsByClassName('bought-wrapper-mod__head___2vnqo')[0]
-        .getElementsByTagName('td')[0]
-        .getElementsByTagName('span')[5].innerText
-
-    order.getElementsByClassName('bought-table-mod__table___AnaXt')[0].prepend(row)
-    m.mount(row, getApp(orderId));
+function showButtonForTrackingNumberRefresh() {
+    var button = document.createElement("button")
+    button.innerHTML = "refresh numbers"
+    button.onclick = function() {
+        showTrackingNumbers()
+    }
+    document.getElementsByClassName("row-mod__row___1aPep js-actions-row-top")[0].append(button)
 }
 
+
+function showTrackingNumbers() {
+    var listOfOrders = document.getElementsByClassName('index-mod__order-container___1ur4-')
+    for (var order of listOfOrders) {
+        var row = trackingNumRow()
+        var orderId = order.getElementsByClassName('bought-wrapper-mod__head___2vnqo')[0]
+            .getElementsByTagName('td')[0]
+            .getElementsByTagName('span')[5].innerText
+    
+        order.getElementsByClassName('bought-table-mod__table___AnaXt')[0].prepend(row)
+        m.mount(row, getApp(orderId));
+    }
+}
+
+showButtonForTrackingNumberRefresh()
+showTrackingNumbers()
 
 // -=-=-=-=-=
 if (m == undefined) {
