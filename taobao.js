@@ -1,9 +1,13 @@
 // ==UserScript==
-// @name show tracking numbers
+// @name Taobao - show tracking numbers
 // @match https://buyertrade.taobao.com/*
 // @require https://unpkg.com/mithril/mithril.js
 // @require https://unpkg.com/mithril/stream/stream.js
 // @run-at document-end
+// @namespace shalva97
+// @license Unlicense
+// @description show tracking numbers on Taobao.com for easy CTRL+F
+// @version 1.0
 // ==/UserScript==
 
 // styles
